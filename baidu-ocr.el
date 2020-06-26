@@ -107,7 +107,8 @@
     ;; (setq buffer-read-only t)
     (goto-char (point-min))
     (when (featurep 'baidu-translator) (baidu-translator-translate-mode +1))
-    (pop-to-buffer (current-buffer))))
+    (display-buffer-in-side-window (current-buffer) '((side . right) (window-width . 0.5)))
+    ))
 
 (defun baidu-ocr-screenshot ()
   (let ((filename (format "/tmp/%s.png" (format-time-string "%Y%m%d%H%M%S"))))
